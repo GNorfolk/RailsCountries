@@ -1,5 +1,7 @@
 class CountriesController < ApplicationController
+
   def index
+    @countries = Country.all
   end
 
   def new
@@ -19,4 +21,5 @@ class CountriesController < ApplicationController
 
   def destroy
   end
+
 end
