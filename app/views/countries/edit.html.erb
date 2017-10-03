@@ -19,6 +19,8 @@
 	<label for="president">President: </label>
 	<input type="text" name="president" value="<%= @country.president %>">
 
+	<input type="hidden" name="_method" value="PUT">
+
 	<input type="submit" name="Save" value="Update Country!">
 
 </form>
