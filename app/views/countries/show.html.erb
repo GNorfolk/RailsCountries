@@ -1,2 +1,18 @@
-<h1>Countries#show</h1>
-<p>Find me in app/views/countries/show.html.erb</p>
+<h1>Country Index</h1>
+
+<h2><%= @country.name %></h2>
+<img src="<%= @country.flag_url %>">
+
+<p><%= @country.name %> has a population of <%= @country.population %> people.</p>
+<p>The population of <%= @country.name %> speak <%= @country.language %> as their first language.</p>
+<p><%= @country.president %> is <%= @country.name %>'s president.</p>
+
+<a href="/countries/<%= @country.id %>/edit">
+	<p>Click here to edit the country!</p>
+</a>
+
+<form action="/countries/<%= @country.id %>" method="POST">
+	<%= token_tag %>
+	<input type="hidden" name="_method" value="DELETE">
+	<input type="submit" name="Delete" value="Delete country!">
+</form>

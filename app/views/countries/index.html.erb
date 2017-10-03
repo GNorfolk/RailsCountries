@@ -2,6 +2,12 @@
 
 <% @countries.each do |country| %>
 
+	<%= token_tag %>
+
 	<h2><%= country.name %></h2>
+	<a href="countries/<%= country.id %>">
+		<img src="<%= country.flag_url %>">	
+		<p>Click here to open country view!</p>
+	</a>
 
 <% end %>
